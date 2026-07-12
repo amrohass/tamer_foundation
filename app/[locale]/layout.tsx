@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { RoleProvider } from "@/components/RoleProvider";
 import TopBar from "@/components/TopBar";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -31,7 +32,10 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "app" });
   return {
-    title: t("title"),
+    title: {
+      default: t("title"),
+      template: `%s — ${t("title")}`,
+    },
     description: t("description"),
   };
 }
@@ -48,6 +52,7 @@ export default async function LocaleLayout({
     notFound();
   }
   setRequestLocale(locale);
+  const tNav = await getTranslations("nav");
 
   return (
     <html
@@ -57,8 +62,18 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
-          <TopBar />
-          {children}
+          <RoleProvider>
+            <a
+              href="#main"
+              className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+            >
+              {tNav("skipToContent")}
+            </a>
+            <TopBar />
+            <main id="main" className="flex flex-1 flex-col">
+              {children}
+            </main>
+          </RoleProvider>
         </NextIntlClientProvider>
       </body>
     </html>

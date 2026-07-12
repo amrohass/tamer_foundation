@@ -2,14 +2,24 @@
 
 :root {
   --background: #fdfbf8;
-  --foreground: #201a1a;
+  --foreground: #241c1c;
+}
+
+@theme {
+  --color-primary: #b01e28;
+  --color-primary-dark: #8c1820;
+  --color-primary-soft: #f9e9ea;
+  --color-surface: #ffffff;
+  --color-muted: #6f6060;
+  --color-line: #eadfd8;
+  --color-success: #15803d;
+  --color-accent: #b45309;
+  --shadow-soft: 0 2px 16px rgb(36 28 28 / 0.06);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: #b01e28;
-  --color-primary-dark: #8c1820;
   --font-sans: var(--font-plex-sans), var(--font-plex-arabic), ui-sans-serif,
     system-ui, sans-serif;
 }

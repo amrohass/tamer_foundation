@@ -4,7 +4,24 @@
     "description": "Demonstration build of the Tamer Interactive Geo-Library, Digital Reading & Community Engagement Hub"
   },
   "topBar": {
-    "homeLink": "Tamer Interactive Geo-Library"
+    "homeLink": "Tamer Geo-Library",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "nav": {
+    "map": "Map",
+    "passport": "Reading Passport",
+    "facilitators": "Facilitator Hub",
+    "roadmap": "Roadmap",
+    "skipToContent": "Skip to content"
+  },
+  "roles": {
+    "label": "View as",
+    "youth": "Youth",
+    "facilitator": "Facilitator",
+    "librarian": "Librarian",
+    "administrator": "Administrator"
   },
   "languageToggle": {
     "label": "العربية",
@@ -12,6 +29,29 @@
   },
   "home": {
     "title": "Tamer Interactive Geo-Library",
-    "tagline": "Demonstration build — HK Technologies"
+    "tagline": "A living map of libraries, reading adventures and community stories across Palestine.",
+    "demoNote": "Demonstration build — HK Technologies",
+    "exploreHeading": "Explore the demo"
+  },
+  "sections": {
+    "map": {
+      "title": "Interactive Geo-Library",
+      "intro": "Find partner libraries across Palestine and browse the books available at each one."
+    },
+    "passport": {
+      "title": "Digital Reading Passport",
+      "intro": "Log books, earn badges and watch your reading adventure grow."
+    },
+    "facilitators": {
+      "title": "Facilitator Hub",
+      "intro": "Ready-to-use activity recipes and lessons learned from the field."
+    },
+    "roadmap": {
+      "title": "Roadmap",
+      "intro": "What is live in this demo and what ships in the full build."
+    }
+  },
+  "placeholders": {
+    "generic": "This section is built in an upcoming step of this demo."
   }
 }
