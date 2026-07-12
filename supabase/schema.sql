@@ -187,6 +187,17 @@ as $$
   limit match_count;
 $$;
 
+-- Read-only view exposing library coordinates as plain lon/lat columns so
+-- the app never parses binary geometry. security_invoker keeps RLS applied.
+create or replace view public.libraries_map
+with (security_invoker = true) as
+select
+  l.id, l.slug, l.name_en, l.name_ar, l.city_en, l.city_ar,
+  l.description_en, l.description_ar,
+  extensions.st_x(l.location::extensions.geometry) as lon,
+  extensions.st_y(l.location::extensions.geometry) as lat
+from public.libraries l;
+
 -- Keyword fallback: trigram similarity over bilingual recipe text, used when
 -- no query embedding can be produced. Keeps search working with zero
 -- external dependencies.

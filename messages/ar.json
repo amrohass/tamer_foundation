@@ -53,5 +53,19 @@
   },
   "placeholders": {
     "generic": "يُبنى هذا القسم في خطوة قادمة من هذا العرض التوضيحي."
+  },
+  "map": {
+    "searchLabel": "ابحث عن مكتبة",
+    "searchPlaceholder": "ابحث باسم المكتبة…",
+    "cityLabel": "المدينة",
+    "allCities": "كل المدن",
+    "resultsCount": "{count, plural, zero {لا توجد مكتبات} one {مكتبة واحدة} two {مكتبتان} few {# مكتبات} other {# مكتبة}}",
+    "availableBooks": "الكتب المتوفرة",
+    "copies": "{count, plural, one {نسخة واحدة} two {نسختان} few {# نسخ} other {# نسخة}}",
+    "ages": "الأعمار {min}–{max}",
+    "noResults": "لا توجد مكتبات مطابقة لبحثك.",
+    "mapRegionLabel": "خريطة المكتبات الشريكة",
+    "noMapTitle": "عرض الخريطة غير متاح",
+    "noMapBody": "أضِف رمز Mapbox لتفعيل الخريطة التفاعلية. جميع المكتبات معروضة هنا في هذه الأثناء."
   }
 }

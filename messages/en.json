@@ -53,5 +53,19 @@
   },
   "placeholders": {
     "generic": "This section is built in an upcoming step of this demo."
+  },
+  "map": {
+    "searchLabel": "Search libraries",
+    "searchPlaceholder": "Search by library name…",
+    "cityLabel": "City",
+    "allCities": "All cities",
+    "resultsCount": "{count, plural, one {# library} other {# libraries}}",
+    "availableBooks": "Available books",
+    "copies": "{count, plural, one {# copy} other {# copies}}",
+    "ages": "Ages {min}–{max}",
+    "noResults": "No libraries match your search.",
+    "mapRegionLabel": "Map of partner libraries",
+    "noMapTitle": "Map view is unavailable",
+    "noMapBody": "Add a Mapbox token to enable the interactive map. All libraries are listed here in the meantime."
   }
 }
