@@ -54,6 +54,29 @@
   "placeholders": {
     "generic": "This section is built in an upcoming step of this demo."
   },
+  "passport": {
+    "age": "Age {age}",
+    "xpLabel": "Experience points",
+    "xpProgress": "{current} / {next} XP",
+    "xpAllEarned": "All badges earned — amazing!",
+    "nextBadge": "Next badge: {name}",
+    "badgesHeading": "Badges",
+    "earnedBadge": "Earned",
+    "lockedHint": "Reach {xp} XP",
+    "readingLogHeading": "My reading log",
+    "logCount": "{count, plural, one {# book logged} other {# books logged}}",
+    "scanButton": "Scan to log a book",
+    "dialogLabel": "Log a book",
+    "scanningTitle": "Scanning…",
+    "scanHint": "Hold the book's QR code inside the frame",
+    "foundTitle": "Book found!",
+    "xpGain": "+{xp} XP",
+    "addButton": "Add to my passport",
+    "cancel": "Cancel",
+    "logged": "Logged {title}, plus {xp} XP.",
+    "badgeEarnedAnnounce": "New badge earned: {name}!",
+    "noMoreBooks": "You've logged every book in the demo!"
+  },
   "map": {
     "searchLabel": "Search libraries",
     "searchPlaceholder": "Search by library name…",

@@ -18,6 +18,37 @@ export type LibraryBook = {
   book: Book;
 };
 
+export type Profile = {
+  id: string;
+  slug: string;
+  display_name_en: string;
+  display_name_ar: string;
+  age: number;
+  avatar_emoji: string;
+  xp: number;
+};
+
+export type Badge = {
+  id: string;
+  slug: string;
+  name_en: string;
+  name_ar: string;
+  description_en: string;
+  description_ar: string;
+  icon: string;
+  xp_required: number;
+  sort_order: number;
+};
+
+export type PassportBadge = Badge & { earned: boolean };
+
+export type PassportData = {
+  profile: Profile;
+  badges: PassportBadge[];
+  loggedBooks: Book[];
+  unloggedBooks: Book[];
+};
+
 export type Library = {
   id: string;
   slug: string;

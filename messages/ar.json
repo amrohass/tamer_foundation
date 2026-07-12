@@ -54,6 +54,29 @@
   "placeholders": {
     "generic": "يُبنى هذا القسم في خطوة قادمة من هذا العرض التوضيحي."
   },
+  "passport": {
+    "age": "العمر: {age}",
+    "xpLabel": "نقاط الخبرة",
+    "xpProgress": "{current} / {next} نقطة",
+    "xpAllEarned": "اكتملت كل الشارات — رائع!",
+    "nextBadge": "الشارة التالية: {name}",
+    "badgesHeading": "الشارات",
+    "earnedBadge": "مكتسبة",
+    "lockedHint": "اجمع {xp} نقطة",
+    "readingLogHeading": "سجلّ قراءاتي",
+    "logCount": "{count, plural, zero {لا كتب مسجّلة} one {كتاب واحد مسجّل} two {كتابان مسجّلان} few {# كتب مسجّلة} other {# كتابًا مسجّلًا}}",
+    "scanButton": "امسح لتسجيل كتاب",
+    "dialogLabel": "تسجيل كتاب",
+    "scanningTitle": "جارٍ المسح…",
+    "scanHint": "ضَع رمز QR الخاص بالكتاب داخل الإطار",
+    "foundTitle": "وجدنا كتابًا!",
+    "xpGain": "‎+{xp} نقطة",
+    "addButton": "أضِفه إلى جوازي",
+    "cancel": "إلغاء",
+    "logged": "سُجّل «{title}» مع {xp} نقطة إضافية.",
+    "badgeEarnedAnnounce": "شارة جديدة: {name}!",
+    "noMoreBooks": "لقد سجّلت كل كتب هذا العرض التوضيحي!"
+  },
   "map": {
     "searchLabel": "ابحث عن مكتبة",
     "searchPlaceholder": "ابحث باسم المكتبة…",
