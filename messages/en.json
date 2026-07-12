@@ -1,0 +1,17 @@
+{
+  "app": {
+    "title": "Tamer Interactive Geo-Library",
+    "description": "Demonstration build of the Tamer Interactive Geo-Library, Digital Reading & Community Engagement Hub"
+  },
+  "topBar": {
+    "homeLink": "Tamer Interactive Geo-Library"
+  },
+  "languageToggle": {
+    "label": "العربية",
+    "ariaLabel": "Switch to Arabic"
+  },
+  "home": {
+    "title": "Tamer Interactive Geo-Library",
+    "tagline": "Demonstration build — HK Technologies"
+  }
+}
