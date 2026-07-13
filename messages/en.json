@@ -51,8 +51,50 @@
       "intro": "What is live in this demo and what ships in the full build."
     }
   },
-  "placeholders": {
-    "generic": "This section is built in an upcoming step of this demo."
+  "roadmap": {
+    "statusLive": "Live in this demo",
+    "statusPreview": "Previewed in this demo",
+    "statusFull": "In the full build",
+    "open": "Open in the demo",
+    "note": "This demonstration deliberately builds a small set of components to production depth. Everything marked for the full build is scoped and delivered as part of the complete platform.",
+    "components": {
+      "geo": {
+        "title": "Interactive Geo-Library",
+        "b1": "Map of partner libraries with city and name filters",
+        "b2": "Library cards with live book availability",
+        "b3": "Nearby-library discovery across the full network"
+      },
+      "passport": {
+        "title": "Digital Reading Passport",
+        "b1": "Child profile with XP, badges and a reading log",
+        "b2": "Simulated QR check-in with instant rewards",
+        "b3": "Real QR codes in libraries and synced profiles"
+      },
+      "hub": {
+        "title": "Facilitator & Community Hub",
+        "b1": "18 bilingual activity recipes with field lessons",
+        "b2": "AI semantic search in Arabic and English",
+        "b3": "Recipe submissions and facilitator exchange"
+      },
+      "reading": {
+        "title": "Digital Reading & e-Library",
+        "b1": "Book catalogue with bilingual detail pages",
+        "b2": "AI co-pilot for discussion questions",
+        "b3": "Full e-book reader and audiobook streaming"
+      },
+      "apps": {
+        "title": "Mobile Apps",
+        "b1": "Fully responsive mobile web experience",
+        "b2": "Native iOS and Android apps (Flutter)",
+        "b3": "Offline reading and sync"
+      },
+      "admin": {
+        "title": "Administration & Roles",
+        "b1": "\"View as\" switcher previews all four audiences",
+        "b2": "Real authentication and enforced permissions",
+        "b3": "Moderation queue and analytics dashboards"
+      }
+    }
   },
   "book": {
     "ages": "Ages {min}–{max}",
