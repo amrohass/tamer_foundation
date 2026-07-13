@@ -118,6 +118,75 @@ export async function getPassportData(): Promise<PassportData> {
   return passportFromSeed();
 }
 
+export type BookWithLibraries = {
+  book: Book;
+  libraries: Array<
+    Pick<Library, "id" | "slug" | "name_en" | "name_ar" | "city_en" | "city_ar">
+  >;
+};
+
+type BookRow = Book & {
+  library_books: Array<{
+    library: BookWithLibraries["libraries"][number] | null;
+  }>;
+};
+
+/**
+ * A single book with the libraries that carry it, for the book detail page
+ * and the AI co-pilot. Returns null for unknown slugs; falls back to seed
+ * content when Supabase is unavailable.
+ */
+export async function getBookWithLibraries(
+  slug: string,
+): Promise<BookWithLibraries | null> {
+  const supabase = getSupabase();
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("books")
+      .select(
+        `${bookSelect}, library_books(library:libraries(id, slug, name_en, name_ar, city_en, city_ar))`,
+      )
+      .eq("slug", slug)
+      .maybeSingle();
+    if (!error) {
+      if (!data) return null;
+      const row = data as unknown as BookRow;
+      const { library_books, ...book } = row;
+      return {
+        book,
+        libraries: library_books.flatMap(({ library }) =>
+          library ? [library] : [],
+        ),
+      };
+    }
+  }
+  return bookWithLibrariesFromSeed(slug);
+}
+
+function bookWithLibrariesFromSeed(slug: string): BookWithLibraries | null {
+  const book = booksFromSeed().find((b) => b.slug === slug);
+  if (!book) return null;
+  const libraryBySlug = new Map(seedLibraries.map((l) => [l.slug, l]));
+  const libraries = Object.entries(seedLibraryBooks)
+    .filter(([, entries]) => entries.some(([bookSlug]) => bookSlug === slug))
+    .flatMap(([librarySlug]) => {
+      const l = libraryBySlug.get(librarySlug);
+      return l
+        ? [
+            {
+              id: l.slug,
+              slug: l.slug,
+              name_en: l.nameEn,
+              name_ar: l.nameAr,
+              city_en: l.cityEn,
+              city_ar: l.cityAr,
+            },
+          ]
+        : [];
+    });
+  return { book, libraries };
+}
+
 type RecipeRow = Omit<Recipe, "book"> & { book: Book | null };
 
 /**

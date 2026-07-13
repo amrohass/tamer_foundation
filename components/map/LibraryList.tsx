@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { ChevronDown, MapPin, SearchX } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Card, { cardClasses } from "@/components/ui/Card";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import { localized } from "@/lib/localized";
 import type { Library } from "@/lib/types";
@@ -93,30 +94,32 @@ export default function LibraryList({
                   </h3>
                   <ul className="mt-2 flex flex-col gap-2">
                     {books.map(({ book, copies }) => (
-                      <li
-                        key={book.id}
-                        className="flex items-center gap-3 rounded-xl bg-background p-2"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="flex size-10 shrink-0 items-center justify-center rounded-lg text-xl"
-                          style={{ backgroundColor: `${book.cover_color}22` }}
+                      <li key={book.id}>
+                        <Link
+                          href={`/books/${book.slug}`}
+                          className="flex items-center gap-3 rounded-xl bg-background p-2 transition-colors hover:bg-primary-soft/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                         >
-                          {book.cover_emoji}
-                        </span>
-                        <span className="min-w-0 flex-1">
-                          <span className="block truncate text-sm font-medium">
-                            {localized(locale, book.title_en, book.title_ar)}
+                          <span
+                            aria-hidden="true"
+                            className="flex size-10 shrink-0 items-center justify-center rounded-lg text-xl"
+                            style={{ backgroundColor: `${book.cover_color}22` }}
+                          >
+                            {book.cover_emoji}
                           </span>
-                          <span className="block truncate text-xs text-muted">
-                            {localized(locale, book.author_en, book.author_ar)}
-                            {" · "}
-                            {t("ages", { min: book.age_min, max: book.age_max })}
+                          <span className="min-w-0 flex-1">
+                            <span className="block truncate text-sm font-medium">
+                              {localized(locale, book.title_en, book.title_ar)}
+                            </span>
+                            <span className="block truncate text-xs text-muted">
+                              {localized(locale, book.author_en, book.author_ar)}
+                              {" · "}
+                              {t("ages", { min: book.age_min, max: book.age_max })}
+                            </span>
                           </span>
-                        </span>
-                        <span className="shrink-0 text-xs text-muted">
-                          {t("copies", { count: copies })}
-                        </span>
+                          <span className="shrink-0 text-xs text-muted">
+                            {t("copies", { count: copies })}
+                          </span>
+                        </Link>
                       </li>
                     ))}
                   </ul>

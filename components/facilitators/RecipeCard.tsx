@@ -1,6 +1,7 @@
 import { Clock, Users } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { cardClasses } from "@/components/ui/Card";
+import { Link } from "@/i18n/navigation";
 import { localized } from "@/lib/localized";
 import type { Recipe } from "@/lib/types";
 
@@ -31,7 +32,10 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
         {localized(locale, recipe.summary_en, recipe.summary_ar)}
       </p>
       {recipe.book && (
-        <p className="flex items-center gap-2 text-sm">
+        <Link
+          href={`/books/${recipe.book.slug}`}
+          className="flex items-center gap-2 rounded-lg text-sm hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
           <span
             aria-hidden="true"
             className="flex size-8 shrink-0 items-center justify-center rounded-lg text-base"
@@ -43,7 +47,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
             <span className="text-muted">{t("bookLabel")}: </span>
             {localized(locale, recipe.book.title_en, recipe.book.title_ar)}
           </span>
-        </p>
+        </Link>
       )}
       <blockquote className="mt-auto border-s-2 border-primary/40 ps-3 text-sm text-muted">
         <span className="mb-0.5 block text-xs font-semibold text-primary-dark">
