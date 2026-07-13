@@ -51,6 +51,11 @@
       "intro": "What is live in this demo and what ships in the full build."
     }
   },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page doesn't exist in the demo. Head back home to keep exploring.",
+    "home": "Back to home"
+  },
   "roadmap": {
     "statusLive": "Live in this demo",
     "statusPreview": "Previewed in this demo",

@@ -56,29 +56,31 @@ export default function LibraryList({
                 cn("p-4", open && "border-primary ring-1 ring-primary"),
               )}
             >
-              <button
-                type="button"
-                onClick={() => onSelect(open ? null : library.id)}
-                aria-expanded={open}
-                className="flex w-full items-center justify-between gap-3 rounded text-start focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <span className="min-w-0">
-                  <span className="block font-semibold">
-                    {localized(locale, library.name_en, library.name_ar)}
+              <h2>
+                <button
+                  type="button"
+                  onClick={() => onSelect(open ? null : library.id)}
+                  aria-expanded={open}
+                  className="flex w-full items-center justify-between gap-3 rounded text-start focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                >
+                  <span className="min-w-0">
+                    <span className="block font-semibold">
+                      {localized(locale, library.name_en, library.name_ar)}
+                    </span>
+                    <span className="mt-0.5 flex items-center gap-1 text-sm font-normal text-muted">
+                      <MapPin className="size-3.5 shrink-0" aria-hidden="true" />
+                      {localized(locale, library.city_en, library.city_ar)}
+                    </span>
                   </span>
-                  <span className="mt-0.5 flex items-center gap-1 text-sm text-muted">
-                    <MapPin className="size-3.5 shrink-0" aria-hidden="true" />
-                    {localized(locale, library.city_en, library.city_ar)}
-                  </span>
-                </span>
-                <ChevronDown
-                  aria-hidden="true"
-                  className={cn(
-                    "size-5 shrink-0 text-muted transition-transform",
-                    open && "rotate-180",
-                  )}
-                />
-              </button>
+                  <ChevronDown
+                    aria-hidden="true"
+                    className={cn(
+                      "size-5 shrink-0 text-muted transition-transform",
+                      open && "rotate-180",
+                    )}
+                  />
+                </button>
+              </h2>
 
               {open && (
                 <div className="mt-3 border-t border-line pt-3">
