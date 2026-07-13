@@ -2,7 +2,7 @@
 
 A working, bilingual (العربية / English) demonstration of the **Interactive Geo-Library, Digital Reading & Community Engagement Hub**, built by **HK Technologies**.
 
-**Live demo:** _coming shortly — deployment in progress_
+**Live demo:** **[tamer-foundation.vercel.app](https://tamer-foundation.vercel.app)** — العربية by default, English via the toggle.
 
 <!-- TODO: replace with a real screenshot of the map or passport before submission -->
 ![Interactive Geo-Library map](docs/screenshot.png)
