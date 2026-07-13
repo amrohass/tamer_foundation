@@ -54,6 +54,39 @@
   "placeholders": {
     "generic": "This section is built in an upcoming step of this demo."
   },
+  "hub": {
+    "searchLabel": "What do you need?",
+    "searchPlaceholder": "e.g. 15-minute empathy activity for 8-year-olds",
+    "searchButton": "Search",
+    "searching": "Searching…",
+    "suggestionsLabel": "Try:",
+    "suggestion1": "15-minute empathy activity for 8-year-olds",
+    "suggestion2": "Outdoor nature activity about listening",
+    "suggestion3": "Teamwork challenge with recycled materials",
+    "allRecipes": "All activity recipes",
+    "resultsFor": "Results for “{query}”",
+    "modeSemantic": "AI semantic matches",
+    "modeKeyword": "Keyword matches",
+    "count": "{count, plural, one {# recipe} other {# recipes}}",
+    "clear": "Show all recipes",
+    "empty": "No matching recipes. Try different words, or browse all recipes.",
+    "lessonLabel": "Lesson from the field",
+    "bookLabel": "Book",
+    "duration": "{minutes} min",
+    "ages": "Ages {min}–{max}"
+  },
+  "themes": {
+    "empathy": "Empathy",
+    "environment": "Environment",
+    "storytelling": "Storytelling",
+    "teamwork": "Teamwork",
+    "courage": "Courage",
+    "science": "Science & discovery",
+    "heritage": "Heritage",
+    "community": "Community",
+    "imagination": "Imagination",
+    "nature": "Nature"
+  },
   "passport": {
     "age": "Age {age}",
     "xpLabel": "Experience points",

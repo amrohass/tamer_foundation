@@ -6,6 +6,7 @@ import {
   libraryBooks as seedLibraryBooks,
   loggedBooks as seedLoggedBooks,
   profile as seedProfile,
+  recipes as seedRecipes,
 } from "@/supabase/seed-data.mts";
 import { getSupabase } from "./supabase";
 import type {
@@ -14,6 +15,7 @@ import type {
   Library,
   PassportData,
   Profile,
+  Recipe,
 } from "./types";
 
 const librarySelect =
@@ -114,6 +116,51 @@ export async function getPassportData(): Promise<PassportData> {
     }
   }
   return passportFromSeed();
+}
+
+type RecipeRow = Omit<Recipe, "book"> & { book: Book | null };
+
+/**
+ * All activity recipes with their linked book, for the Facilitator Hub grid.
+ * Falls back to bundled seed content when Supabase is unavailable.
+ */
+export async function getRecipes(): Promise<Recipe[]> {
+  const supabase = getSupabase();
+  if (supabase) {
+    const { data, error } = await supabase
+      .from("recipes")
+      .select(
+        `id, slug, title_en, title_ar, theme, age_min, age_max, duration_minutes, summary_en, summary_ar, lesson_en, lesson_ar, book:books(${bookSelect})`,
+      )
+      .order("title_en");
+    if (!error && data && data.length > 0) {
+      return data as unknown as RecipeRow[];
+    }
+  }
+  return recipesFromSeed();
+}
+
+function recipesFromSeed(): Recipe[] {
+  const bookBySlug = new Map<string, Book>(
+    booksFromSeed().map((b) => [b.slug, b]),
+  );
+  return [...seedRecipes]
+    .sort((a, b) => a.titleEn.localeCompare(b.titleEn))
+    .map((r) => ({
+      id: r.slug,
+      slug: r.slug,
+      title_en: r.titleEn,
+      title_ar: r.titleAr,
+      theme: r.theme,
+      age_min: r.ageMin,
+      age_max: r.ageMax,
+      duration_minutes: r.durationMinutes,
+      summary_en: r.summaryEn,
+      summary_ar: r.summaryAr,
+      lesson_en: r.lessonEn,
+      lesson_ar: r.lessonAr,
+      book: bookBySlug.get(r.bookSlug) ?? null,
+    }));
 }
 
 function passportFromSeed(): PassportData {

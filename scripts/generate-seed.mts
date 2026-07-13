@@ -7,6 +7,7 @@
 
 import { writeFile } from "node:fs/promises";
 import { pipeline } from "@huggingface/transformers";
+import { EMBEDDING_MODEL } from "../lib/embeddings.ts";
 import {
   badges,
   books,
@@ -18,8 +19,6 @@ import {
   recipes,
   type RecipeSeed,
 } from "../supabase/seed-data.mts";
-
-export const EMBEDDING_MODEL = "Xenova/paraphrase-multilingual-MiniLM-L12-v2";
 
 const esc = (value: string) => value.replace(/'/g, "''");
 const lit = (value: string) => `'${esc(value)}'`;

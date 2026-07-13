@@ -49,6 +49,22 @@ export type PassportData = {
   unloggedBooks: Book[];
 };
 
+export type Recipe = {
+  id: string;
+  slug: string;
+  title_en: string;
+  title_ar: string;
+  theme: string;
+  age_min: number;
+  age_max: number;
+  duration_minutes: number;
+  summary_en: string;
+  summary_ar: string;
+  lesson_en: string;
+  lesson_ar: string;
+  book: Book | null;
+};
+
 export type Library = {
   id: string;
   slug: string;

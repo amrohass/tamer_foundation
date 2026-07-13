@@ -54,6 +54,39 @@
   "placeholders": {
     "generic": "يُبنى هذا القسم في خطوة قادمة من هذا العرض التوضيحي."
   },
+  "hub": {
+    "searchLabel": "ماذا تحتاج؟",
+    "searchPlaceholder": "مثال: نشاط عن التعاطف لمدة 15 دقيقة لعمر 8 سنوات",
+    "searchButton": "ابحث",
+    "searching": "جارٍ البحث…",
+    "suggestionsLabel": "جرّب:",
+    "suggestion1": "نشاط قصير عن التعاطف لعمر 8 سنوات",
+    "suggestion2": "نشاط في الطبيعة عن الإصغاء",
+    "suggestion3": "تحدٍّ جماعي بمواد معاد تدويرها",
+    "allRecipes": "كل وصفات الأنشطة",
+    "resultsFor": "نتائج البحث عن «{query}»",
+    "modeSemantic": "نتائج البحث الدلالي الذكي",
+    "modeKeyword": "نتائج مطابقة الكلمات",
+    "count": "{count, plural, zero {لا وصفات} one {وصفة واحدة} two {وصفتان} few {# وصفات} other {# وصفة}}",
+    "clear": "اعرض كل الوصفات",
+    "empty": "لا توجد وصفات مطابقة. جرّب كلمات أخرى أو تصفّح كل الوصفات.",
+    "lessonLabel": "درس من الميدان",
+    "bookLabel": "الكتاب",
+    "duration": "{minutes} دقيقة",
+    "ages": "الأعمار {min}–{max}"
+  },
+  "themes": {
+    "empathy": "التعاطف",
+    "environment": "البيئة",
+    "storytelling": "سرد الحكايات",
+    "teamwork": "العمل الجماعي",
+    "courage": "الشجاعة",
+    "science": "العلوم والاستكشاف",
+    "heritage": "التراث",
+    "community": "المجتمع",
+    "imagination": "الخيال",
+    "nature": "الطبيعة"
+  },
   "passport": {
     "age": "العمر: {age}",
     "xpLabel": "نقاط الخبرة",
